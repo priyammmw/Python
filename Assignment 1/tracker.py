@@ -3,27 +3,27 @@ print("[ WELCOME ]")
 print("[DAILY CALORIE TRACKER ]")
 
 print()
-print("NAME : Priyam Sharma")  # about me
+print("NAME : Priyam Sharma") 
 print("ROLL NUMBER : 2501730184")
 print(f"DATE : {dt.datetime.now()}") 
 print()
 
-meals=[]   # empty list to store meals name
-calories=[] # empty list to store calories
+meals=[]   
+calories=[] 
 
-user_input = int(input("How many meals do you want to add :".upper())) #ask from user number of meals
+user_input = int(input("How many meals do you want to add :".upper()))
 
 print()
-user_intake_limit=float(input("Enter your daily calorie limit :".upper())) #ask from user daily calorie limit
+user_intake_limit=float(input("Enter your daily calorie limit :".upper())) 
 
 print()
 
 count = 0
-while count < user_input:  #use while loop to add meals and calories
-    user_input1 = input("Enter meal name and calories separated by a comma: ").strip() #ask from user meal name and calories , use strip function to remove extra spaces
-    temp_list = user_input1.split(',') #split the input string into meal name and calories
-    meals.append(temp_list[0].strip().upper()) #add meal name to meals list after removing extra spaces and converting to uppercase
-    calories.append(float(temp_list[1].strip())) #add calories to calories list after converting it to float
+while count < user_input:  
+    user_input1 = input("Enter meal name and calories separated by a comma: ").strip() 
+    temp_list = user_input1.split(',')
+    meals.append(temp_list[0].strip().upper()) 
+    calories.append(float(temp_list[1].strip())) 
     count += 1
 
 print()
@@ -42,12 +42,12 @@ print("\033[1;96m" + f"Total Calories Consumed : {sum(calories)}" + "\033[0m")
 
 print()
 print()
-average_calories = sum(calories)/len(calories) #calculate average calories
+average_calories = sum(calories)/len(calories) 
 
 print(f"Average Calories per Meal : {average_calories:.2f}")
 print()
 
-if float(sum(calories)) > user_intake_limit: #compare total calories with user intake limit
+if float(sum(calories)) > user_intake_limit: 
     print("You have exceeded your daily calorie limit.".upper())
 else:
     print("You are within your daily calorie limit.".upper())
